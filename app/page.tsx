@@ -15,12 +15,13 @@ export default function Home() {
            {/* Desktop Links */}
            <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide text-stone-300">
              <Link href="#chi-siamo" className="hover:text-orange-400 transition-colors duration-300">CHI SIAMO</Link>
+             <Link href="#slow-food" className="hover:text-orange-400 transition-colors duration-300">SLOW FOOD</Link>
              <Link href="#menu" className="hover:text-orange-400 transition-colors duration-300">MENU</Link>
              <Link href="#contatti" className="hover:text-orange-400 transition-colors duration-300">CONTATTI</Link>
            </div>
 
            {/* CTA Button */}
-           <Link href="tel:+390645503437" className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-orange-500/20">
+           <Link href="tel:+39054564468" className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-orange-500/20">
              PRENOTA
            </Link>
         </div>
@@ -41,13 +42,13 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
           <span className="inline-block py-1 px-3 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold tracking-widest mb-6 uppercase">
-            Cucina Romana Autentica
+            Cucina Tradizionale
           </span>
           <h1 className="text-5xl md:text-8xl font-bold mb-8 tracking-tighter text-white drop-shadow-lg">
             OSTERIA MALABOCCA
           </h1>
           <p className="text-lg md:text-2xl text-stone-300 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
-            Dove la tradizione incontra l'eleganza. Un'esperienza culinaria indimenticabile nel cuore di Roma.
+            Dove la tradizione incontra l'eleganza. Un'esperienza culinaria indimenticabile a Bagnacavallo.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
              <Link href="#menu" className="group relative px-8 py-4 bg-white text-stone-950 rounded-full overflow-hidden transition-all hover:bg-stone-200 font-bold tracking-wide shadow-xl">
@@ -81,12 +82,35 @@ export default function Home() {
              </h2>
              <div className="p-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl">
                <p className="text-stone-300 text-lg leading-relaxed mb-6">
-                 L'Osteria Malabocca nasce dall'amore per la cucina romana verace. Selezioniamo solo ingredienti freschi dai mercati locali per portare in tavola i sapori di una volta, rivisitati con un tocco moderno.
+                 L'Osteria Malabocca nasce dall'amore per la cucina tradizionale. Selezioniamo solo ingredienti freschi dai mercati locali per portare in tavola i sapori di una volta, rivisitati con un tocco moderno.
                </p>
                <p className="text-stone-300 text-lg leading-relaxed">
-                 Dalla Carbonara cremosa all'Amatriciana ricca, ogni piatto è un viaggio nella storia gastronomica della nostra città.
+                 Dai primi piatti fatti a mano ai secondi di carne selezionata, ogni piatto è un viaggio nella storia gastronomica del nostro territorio.
                </p>
              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* --- SLOW FOOD SECTION --- */}
+      <section id="slow-food" className="py-24 bg-stone-900 relative">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+           <div className="space-y-6">
+             <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">Filosofia</span>
+             <h2 className="text-4xl md:text-5xl font-bold text-white">Alleanza Slow Food</h2>
+             <p className="text-stone-300 text-lg leading-relaxed">
+               L'Osteria Malabocca aderisce all'Alleanza dei Cuochi Slow Food, impegnandosi a valorizzare i prodotti dei Presìdi, dell'Arca del Gusto e le piccole produzioni locali.
+             </p>
+             <p className="text-stone-300 text-lg leading-relaxed">
+               Crediamo in un cibo buono, pulito e giusto, sostenendo la biodiversità e il lavoro dei contadini e degli artigiani del nostro territorio.
+             </p>
+           </div>
+           <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+             <img 
+               src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" 
+               alt="Slow Food" 
+               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+             />
            </div>
         </div>
       </section>
@@ -96,7 +120,7 @@ export default function Home() {
          <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">Il Nostro Gusto</span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-3 text-white">I Classici Romani</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mt-3 text-white">I Nostri Piatti</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -114,7 +138,7 @@ export default function Home() {
 
                {/* Card 2 */}
                <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer border border-white/5 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1546549010-413bc4f4d756?q=80&w=2069&auto=format&fit=crop" alt="Cacio e Pepe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=1000&auto=format&fit=crop" alt="Cacio e Pepe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
                   <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                      <h3 className="text-3xl font-bold mb-2 text-white">Cacio e Pepe</h3>
@@ -138,9 +162,9 @@ export default function Home() {
             </div>
             
             <div className="text-center mt-16">
-               <button className="px-8 py-3 border border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold tracking-wide">
+               <Link href="/menu" className="inline-block px-8 py-3 border border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold tracking-wide">
                  VEDI IL MENU COMPLETO
-               </button>
+               </Link>
             </div>
          </div>
       </section>
@@ -151,11 +175,12 @@ export default function Home() {
            {/* Address */}
            <div>
              <h4 className="text-2xl font-bold mb-6 text-white">Osteria Malabocca</h4>
+             <p className="text-stone-500 text-sm mb-4">di Roberto Dalfiume & C. - P.IVA 02176510390</p>
              <p className="text-stone-400 mb-4 leading-relaxed">
-               Via Esempio, 123<br/>
-               00100 Roma (RM)
+               Piazza della Libertà, 15<br/>
+               48012 Bagnacavallo (RA)
              </p>
-             <a href="tel:+390645503437" className="text-orange-500 hover:text-orange-400 block mb-2 font-bold text-lg">+39 06 4550 3437</a>
+             <a href="tel:+39054564468" className="text-orange-500 hover:text-orange-400 block mb-2 font-bold text-lg">0545 64468</a>
              <a href="mailto:info@osteriamalabocca.it" className="text-stone-400 hover:text-white transition-colors">info@osteriamalabocca.it</a>
            </div>
            

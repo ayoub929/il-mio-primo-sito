@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Osteria Malabocca | Cucina Romana",
+  title: "Osteria Malabocca | Bagnacavallo",
   description: "Cucina tradizionale, sapori autentici e un'atmosfera che sa di casa.",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" className="scroll-smooth">
+    <html lang="it" className="scroll-smooth scroll-pt-24">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-stone-950 text-stone-200`}
       >

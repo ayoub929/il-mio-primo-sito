@@ -1,219 +1,237 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-stone-950 font-sans selection:bg-orange-500 selection:text-white">
+    <main className="min-h-screen font-sans selection:bg-orange-700 selection:text-white">
       
-      {/* --- GLASS NAVIGATION --- */}
-      <nav className="fixed top-0 w-full z-50 px-4 py-4 md:px-8">
-        <div className="max-w-7xl mx-auto bg-white/5 backdrop-blur-lg border border-white/10 rounded-full px-6 py-4 flex justify-between items-center shadow-2xl">
-           {/* Logo */}
-           <div className="text-xl md:text-2xl font-bold tracking-widest uppercase text-white">
-             Malabocca
-           </div>
+      {/* --- ELEGANT NAVBAR --- */}
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-stone-100 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex justify-between items-center">
+           {/* Logo - Text based for elegance */}
+           <Link href="/" className="flex flex-col items-center group">
+             <span className="font-serif text-2xl tracking-widest text-stone-900 group-hover:text-orange-800 transition-colors">MALABOCCA</span>
+             <span className="text-[10px] uppercase tracking-[0.3em] text-stone-500">Osteria & Vini</span>
+           </Link>
            
            {/* Desktop Links */}
-           <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide text-stone-300">
-             <Link href="#chi-siamo" className="hover:text-orange-400 transition-colors duration-300">CHI SIAMO</Link>
-             <Link href="#slow-food" className="hover:text-orange-400 transition-colors duration-300">SLOW FOOD</Link>
-             <Link href="#menu" className="hover:text-orange-400 transition-colors duration-300">MENU</Link>
-             <Link href="#contatti" className="hover:text-orange-400 transition-colors duration-300">CONTATTI</Link>
+           <div className="hidden md:flex items-center gap-12 text-sm font-medium tracking-widest text-stone-600">
+             <Link href="#filosofia" className="hover:text-orange-800 transition-colors">FILOSOFIA</Link>
+             <Link href="#menu" className="hover:text-orange-800 transition-colors">IL MENU</Link>
+             <Link href="#gallery" className="hover:text-orange-800 transition-colors">ATMOSFERA</Link>
+             <Link href="#contatti" className="hover:text-orange-800 transition-colors">CONTATTI</Link>
            </div>
 
-           {/* CTA Button */}
-           <Link href="tel:+39054564468" className="bg-orange-600 hover:bg-orange-700 text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-orange-500/20">
-             PRENOTA
+           {/* CTA Button - Gold/Elegant style */}
+           <Link 
+             href="tel:+39054564468" 
+             className="hidden md:inline-block border border-stone-900 px-8 py-3 text-xs font-bold tracking-widest hover:bg-stone-900 hover:text-white transition-all duration-500"
+           >
+             PRENOTA UN TAVOLO
            </Link>
         </div>
       </nav>
 
-      {/* --- HERO SECTION --- */}
+      {/* --- HERO SECTION (Parallax & Immersive) --- */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Immagine scura ed elegante di interni o dettaglio cibo */}
           <img 
-            src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1974&auto=format&fit=crop" 
-            alt="Osteria Background" 
-            className="w-full h-full object-cover opacity-50"
+            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop" 
+            alt="Osteria Malabocca Atmosphere" 
+            className="w-full h-full object-cover brightness-[0.6]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-950/40 via-stone-950/20 to-stone-950" />
         </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-16">
-          <span className="inline-block py-1 px-3 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold tracking-widest mb-6 uppercase">
-            Cucina Tradizionale
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
+          <span className="block text-orange-200 text-xs md:text-sm tracking-[0.4em] mb-6 uppercase font-medium">
+            Bagnacavallo, Ravenna
           </span>
-          <h1 className="text-5xl md:text-8xl font-bold mb-8 tracking-tighter text-white drop-shadow-lg">
-            OSTERIA MALABOCCA
+          <h1 className="font-serif text-5xl md:text-8xl text-white mb-8 leading-tight">
+            L'Arte del <br/>
+            <span className="italic text-orange-100">Buon Gusto</span>
           </h1>
-          <p className="text-lg md:text-2xl text-stone-300 mb-10 font-light max-w-2xl mx-auto leading-relaxed">
-            Dove la tradizione incontra l'eleganza. Un'esperienza culinaria indimenticabile a Bagnacavallo.
+          <p className="text-stone-200 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+            Dove la tradizione romagnola incontra l'eleganza contemporanea. 
+            Un'esperienza culinaria autentica, in un'atmosfera intima e raffinata.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-             <Link href="#menu" className="group relative px-8 py-4 bg-white text-stone-950 rounded-full overflow-hidden transition-all hover:bg-stone-200 font-bold tracking-wide shadow-xl">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+             <Link href="#menu" className="bg-white text-stone-900 px-10 py-4 text-xs font-bold tracking-widest hover:bg-orange-50 transition-colors duration-300">
                SCOPRI IL MENU
              </Link>
-             <Link href="#contatti" className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/10 transition-all font-medium tracking-wide text-white">
-               DOVE SIAMO
+             <Link href="tel:+39054564468" className="border border-white text-white px-10 py-4 text-xs font-bold tracking-widest hover:bg-white hover:text-stone-900 transition-colors duration-300">
+               RISERVA ORA
              </Link>
           </div>
         </div>
       </section>
 
-      {/* --- CHI SIAMO SECTION --- */}
-      <section id="chi-siamo" className="py-24 px-6 relative">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-           {/* Image Card */}
-           <div className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+      {/* --- FILOSOFIA (Clean & Airy) --- */}
+      <section id="filosofia" className="py-32 px-6 bg-stone-50">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+           <div className="relative">
+             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-orange-800/30 hidden md:block"></div>
              <img 
-               src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=2032&auto=format&fit=crop" 
-               alt="Pasta Fresca" 
-               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop" 
+               alt="Chef plating food" 
+               className="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out shadow-2xl"
              />
-             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500" />
+             <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-orange-800/30 hidden md:block"></div>
            </div>
            
-           {/* Text Content */}
            <div className="space-y-8">
-             <h2 className="text-4xl md:text-6xl font-bold text-white">
-               Passione & <br/>
-               <span className="text-orange-500">Tradizione</span>
+             <span className="text-orange-800 text-xs font-bold tracking-[0.2em] uppercase">La Nostra Filosofia</span>
+             <h2 className="font-serif text-4xl md:text-5xl text-stone-900 leading-tight">
+               Cucina Autentica, <br/>
+               <span className="italic text-stone-500">Cuore Romagnolo</span>
              </h2>
-             <div className="p-8 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl">
-               <p className="text-stone-300 text-lg leading-relaxed mb-6">
-                 L'Osteria Malabocca nasce dall'amore per la cucina tradizionale. Selezioniamo solo ingredienti freschi dai mercati locali per portare in tavola i sapori di una volta, rivisitati con un tocco moderno.
-               </p>
-               <p className="text-stone-300 text-lg leading-relaxed">
-                 Dai primi piatti fatti a mano ai secondi di carne selezionata, ogni piatto è un viaggio nella storia gastronomica del nostro territorio.
-               </p>
+             <div className="w-12 h-0.5 bg-orange-800"></div>
+             <p className="text-stone-600 text-lg leading-relaxed font-light">
+               All'Osteria Malabocca, crediamo che ogni piatto racconti una storia. Selezioniamo rigorosamente ingredienti locali, rispettando i ritmi delle stagioni e i produttori del territorio.
+             </p>
+             <p className="text-stone-600 text-lg leading-relaxed font-light">
+               La nostra è una cucina che non dimentica le radici, ma le serve con guanti bianchi. Dai cappelletti fatti a mano ai vini pregiati della nostra cantina, ogni dettaglio è curato per offrirvi un momento di puro piacere.
+             </p>
+             <div className="pt-4">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Slow_Food_logo.svg/1200px-Slow_Food_logo.svg.png" alt="Slow Food" className="h-12 opacity-80 grayscale hover:grayscale-0 transition-all" />
              </div>
            </div>
         </div>
       </section>
 
-      {/* --- SLOW FOOD SECTION --- */}
-      <section id="slow-food" className="py-24 bg-stone-900 relative">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-           <div className="space-y-6">
-             <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">Filosofia</span>
-             <h2 className="text-4xl md:text-5xl font-bold text-white">Alleanza Slow Food</h2>
-             <p className="text-stone-300 text-lg leading-relaxed">
-               L'Osteria Malabocca aderisce all'Alleanza dei Cuochi Slow Food, impegnandosi a valorizzare i prodotti dei Presìdi, dell'Arca del Gusto e le piccole produzioni locali.
-             </p>
-             <p className="text-stone-300 text-lg leading-relaxed">
-               Crediamo in un cibo buono, pulito e giusto, sostenendo la biodiversità e il lavoro dei contadini e degli artigiani del nostro territorio.
-             </p>
-           </div>
-           <div className="relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
-             <img 
-               src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop" 
-               alt="Slow Food" 
-               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-             />
-           </div>
-        </div>
-      </section>
-
-      {/* --- MENU HIGHLIGHTS --- */}
-      <section id="menu" className="py-24 bg-stone-900/50 relative">
+      {/* --- MENU PREVIEW (Elegant Cards) --- */}
+      <section id="menu" className="py-32 bg-white">
          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <span className="text-orange-500 font-bold tracking-widest uppercase text-sm">Il Nostro Gusto</span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-3 text-white">I Nostri Piatti</h2>
+            <div className="text-center mb-20">
+              <span className="text-orange-800 text-xs font-bold tracking-[0.2em] uppercase">Eccellenze</span>
+              <h2 className="font-serif text-4xl md:text-6xl text-stone-900 mt-4">Il Nostro Menu</h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-               {/* Card 1 */}
-               <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer border border-white/5 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=2071&auto=format&fit=crop" alt="Carbonara" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
-                  <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                     <h3 className="text-3xl font-bold mb-2 text-white">Carbonara</h3>
-                     <p className="text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                       Guanciale croccante, pecorino romano DOP, uova bio e pepe nero macinato fresco.
-                     </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+               {/* Dish 1 */}
+               <div className="group cursor-pointer">
+                  <div className="overflow-hidden mb-6 relative h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1626804475297-411dbe6314c9?q=80&w=800&auto=format&fit=crop" alt="Pasta Fresca" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  </div>
+                  <div className="text-center">
+                     <h3 className="font-serif text-2xl text-stone-900 mb-2 group-hover:text-orange-800 transition-colors">Primi della Tradizione</h3>
+                     <p className="text-stone-500 font-light text-sm tracking-wide">CAPPELLETTI • TAGLIATELLE • PASSATELLI</p>
                   </div>
                </div>
 
-               {/* Card 2 */}
-               <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer border border-white/5 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1608219992759-8d74ed8d76eb?q=80&w=1000&auto=format&fit=crop" alt="Cacio e Pepe" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
-                  <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                     <h3 className="text-3xl font-bold mb-2 text-white">Cacio e Pepe</h3>
-                     <p className="text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                       Tonnarelli freschi, Pecorino Romano buccia nera e pepe tostato.
-                     </p>
+               {/* Dish 2 */}
+               <div className="group cursor-pointer mt-0 md:-mt-12"> {/* Staggered grid effect */}
+                  <div className="overflow-hidden mb-6 relative h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=800&auto=format&fit=crop" alt="Secondi" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  </div>
+                  <div className="text-center">
+                     <h3 className="font-serif text-2xl text-stone-900 mb-2 group-hover:text-orange-800 transition-colors">Carni Selezionate</h3>
+                     <p className="text-stone-500 font-light text-sm tracking-wide">TAGLIATA • CASTRATO • FILETTO</p>
                   </div>
                </div>
 
-               {/* Card 3 */}
-               <div className="group relative h-[450px] rounded-3xl overflow-hidden cursor-pointer border border-white/5 shadow-2xl">
-                  <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=1974&auto=format&fit=crop" alt="Amatriciana" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
-                  <div className="absolute bottom-0 left-0 p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                     <h3 className="text-3xl font-bold mb-2 text-white">Amatriciana</h3>
-                     <p className="text-stone-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                       Pomodoro San Marzano, guanciale di Amatrice e pecorino.
-                     </p>
+               {/* Dish 3 */}
+               <div className="group cursor-pointer">
+                  <div className="overflow-hidden mb-6 relative h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=800&auto=format&fit=crop" alt="Vini" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+                  </div>
+                  <div className="text-center">
+                     <h3 className="font-serif text-2xl text-stone-900 mb-2 group-hover:text-orange-800 transition-colors">Cantina Pregiata</h3>
+                     <p className="text-stone-500 font-light text-sm tracking-wide">SANGIOVESE • ALBANA • BURSÔN</p>
                   </div>
                </div>
             </div>
             
-            <div className="text-center mt-16">
-               <Link href="/menu" className="inline-block px-8 py-3 border border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 font-bold tracking-wide">
-                 VEDI IL MENU COMPLETO
+            <div className="text-center mt-20">
+               <Link href="/menu" className="inline-block border-b-2 border-stone-900 pb-1 text-stone-900 text-sm font-bold tracking-widest hover:text-orange-800 hover:border-orange-800 transition-all duration-300">
+                 VISUALIZZA IL MENU COMPLETO
                </Link>
             </div>
          </div>
       </section>
 
-      {/* --- FOOTER / CONTACT --- */}
-      <footer id="contatti" className="bg-black py-20 px-6 border-t border-white/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-           {/* Address */}
-           <div>
-             <h4 className="text-2xl font-bold mb-6 text-white">Osteria Malabocca</h4>
-             <p className="text-stone-500 text-sm mb-4">di Roberto Dalfiume & C. - P.IVA 02176510390</p>
-             <p className="text-stone-400 mb-4 leading-relaxed">
-               Piazza della Libertà, 15<br/>
-               48012 Bagnacavallo (RA)
-             </p>
-             <a href="tel:+39054564468" className="text-orange-500 hover:text-orange-400 block mb-2 font-bold text-lg">0545 64468</a>
-             <a href="mailto:info@osteriamalabocca.it" className="text-stone-400 hover:text-white transition-colors">info@osteriamalabocca.it</a>
-           </div>
-           
-           {/* Hours */}
-           <div>
-             <h4 className="text-xl font-bold mb-6 text-white">Orari</h4>
-             <ul className="text-stone-400 space-y-3">
-               <li className="flex justify-center md:justify-start justify-between border-b border-white/10 pb-2">
-                 <span>Lun - Ven</span>
-                 <span>12:00 - 15:00 / 19:00 - 23:30</span>
-               </li>
-               <li className="flex justify-center md:justify-start justify-between border-b border-white/10 pb-2">
-                 <span>Sab - Dom</span>
-                 <span>12:00 - 16:00 / 19:00 - 00:00</span>
-               </li>
-             </ul>
-           </div>
+      {/* --- PARALLAX QUOTE --- */}
+      <section className="relative py-40 bg-stone-900 bg-fixed bg-center bg-cover" style={{backgroundImage: 'url("https://images.unsplash.com/photo-1550966871-3ed3c47e2ce2?q=80&w=2070&auto=format&fit=crop")'}}>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
+          <p className="font-serif text-3xl md:text-5xl text-white leading-snug italic">
+            "Non si può pensare bene, amare bene, dormire bene, se non si è mangiato bene."
+          </p>
+          <p className="text-orange-200 mt-8 text-sm tracking-widest uppercase font-bold">— Virginia Woolf</p>
+        </div>
+      </section>
 
-           {/* Social */}
-           <div className="flex flex-col items-center md:items-end">
-             <h4 className="text-xl font-bold mb-6 text-white">Seguici</h4>
-             <div className="flex gap-4">
-               <a href="https://www.instagram.com/osteria_malabocca/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-500 hover:via-red-500 hover:to-purple-600 transition-all duration-300 group">
-                 <span className="font-bold text-xs group-hover:text-white">IG</span>
-               </a>
-               <a href="https://www.facebook.com/osteriamalabocca/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-600 transition-all duration-300 group">
-                 <span className="font-bold text-xs group-hover:text-white">FB</span>
-               </a>
+      {/* --- REVIEWS (Minimal) --- */}
+      <section className="py-32 bg-stone-50">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+           <span className="text-orange-800 text-4xl mb-6 block">❝</span>
+           <p className="font-serif text-2xl text-stone-800 leading-relaxed mb-8">
+             Un'esperienza indimenticabile. L'atmosfera è calda e accogliente, il personale impeccabile e i piatti sono un vero viaggio nei sapori della Romagna. La carta dei vini è eccellente.
+           </p>
+           <div className="flex items-center justify-center gap-4">
+             <div className="w-10 h-10 bg-stone-300 rounded-full overflow-hidden">
+               <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" className="w-full h-full object-cover" />
+             </div>
+             <div className="text-left">
+               <p className="text-xs font-bold text-stone-900 uppercase tracking-wider">Giulia M.</p>
+               <p className="text-xs text-stone-500">TripAdvisor Review</p>
              </div>
            </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-stone-600 text-sm">
-          © {new Date().getFullYear()} Osteria Malabocca. Tutti i diritti riservati.
+      </section>
+
+      {/* --- FOOTER (Sophisticated) --- */}
+      <footer id="contatti" className="bg-stone-950 text-stone-400 py-24 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+           {/* Brand */}
+           <div className="md:col-span-1">
+             <h4 className="font-serif text-2xl text-white mb-6 tracking-wide">MALABOCCA</h4>
+             <p className="text-sm leading-relaxed mb-6 font-light">
+               Osteria tradizionale e moderna nel cuore di Bagnacavallo. Passione, gusto e accoglienza dal 2000.
+             </p>
+             <div className="flex gap-4">
+               <a href="#" className="text-white hover:text-orange-500 transition">IG</a>
+               <a href="#" className="text-white hover:text-orange-500 transition">FB</a>
+             </div>
+           </div>
+           
+           {/* Contact */}
+           <div className="md:col-span-1">
+             <h5 className="text-white text-xs font-bold tracking-[0.2em] uppercase mb-6">Contatti</h5>
+             <p className="text-sm mb-2 font-light">Piazza della Libertà, 15</p>
+             <p className="text-sm mb-6 font-light">48012 Bagnacavallo (RA)</p>
+             <p className="text-sm mb-2"><a href="tel:+39054564468" className="hover:text-white transition">0545 64468</a></p>
+             <p className="text-sm"><a href="mailto:info@osteriamalabocca.it" className="hover:text-white transition">info@osteriamalabocca.it</a></p>
+           </div>
+
+           {/* Hours */}
+           <div className="md:col-span-1">
+             <h5 className="text-white text-xs font-bold tracking-[0.2em] uppercase mb-6">Orari</h5>
+             <ul className="text-sm space-y-2 font-light">
+               <li className="flex justify-between"><span>Lun - Ven</span> <span>12:00 - 15:00</span></li>
+               <li className="flex justify-between"><span></span> <span>19:00 - 23:00</span></li>
+               <li className="flex justify-between mt-4 text-white"><span>Sab - Dom</span> <span>12:00 - 16:00</span></li>
+               <li className="flex justify-between text-white"><span></span> <span>19:00 - 00:00</span></li>
+             </ul>
+           </div>
+
+           {/* Newsletter / CTA */}
+           <div className="md:col-span-1">
+             <h5 className="text-white text-xs font-bold tracking-[0.2em] uppercase mb-6">Prenotazioni</h5>
+             <p className="text-sm mb-6 font-light">
+               I posti sono limitati, specialmente nel fine settimana. Consigliamo la prenotazione anticipata.
+             </p>
+             <Link href="tel:+39054564468" className="block text-center bg-orange-800 text-white px-6 py-3 text-xs font-bold tracking-widest hover:bg-white hover:text-stone-900 transition-all duration-300">
+               CHIAMA ORA
+             </Link>
+           </div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-stone-800 text-center text-xs font-light tracking-wide">
+          <p>© {new Date().getFullYear()} Osteria Malabocca di Roberto Dalfiume & C. | P.IVA 02176510390 | Privacy Policy</p>
         </div>
       </footer>
     </main>
